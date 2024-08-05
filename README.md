@@ -31,11 +31,12 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ###### two way binding
 
+ communiquer les users changes dans un component
+
     html
     <div class='col-md-4'>
         <input type='text'
-                [(ngModel)]='listFilter'
-                (ngModelChange)="onFilterChange($event)"/>
+                [(ngModel)]='listFilter' // correspond à set  set listFilter(value: string)
       </div>
     </div>
     <div class='row' [hidden]='!listFilter'>
