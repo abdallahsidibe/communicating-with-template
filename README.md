@@ -33,7 +33,9 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
     html
     <div class='col-md-4'>
-        <input type='text'[(ngModel)]='listFilter' />
+        <input type='text'
+                [(ngModel)]='listFilter'
+                (ngModelChange)="onFilterChange($event)"/>
       </div>
     </div>
     <div class='row' [hidden]='!listFilter'>
@@ -44,3 +46,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
     ts
     listFilter!: string;
+
+      onFilterChange(filter: string) {
+      this.listFilter = filter;
+      this.performFilter(this.listFilter);
+    }
